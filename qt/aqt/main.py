@@ -890,6 +890,7 @@ title="%s" %s>%s</button>""" % (
             self.media_syncer.start()
 
         def on_collection_sync_finished():
+            gui_hooks.collection_sync_did_finish(self.col)
             self.reset()
             after_sync()
 

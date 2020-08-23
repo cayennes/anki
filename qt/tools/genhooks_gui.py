@@ -649,6 +649,13 @@ hooks = [
         args=["dialog: aqt.stats.DeckStats"],
         doc="""Allows changing the old stats dialog before it is shown.""",
     ),
+    # Syncing
+    ###################
+    Hook(
+        name="collection_sync_did_finish",
+        args=["col: anki.collection.Collection"],
+        doc="""Called after syncing the collection. Passes the collection as an argument. If you want to call .getCard() or .counts() on it, call .reset() on it first."""
+    ),
     # Other
     ###################
     Hook(
